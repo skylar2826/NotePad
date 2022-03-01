@@ -1,24 +1,22 @@
-# vue-test
+# demo练习
 
-## Project setup
-```
-yarn install
-```
+## demo1:NotePad
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+### 需求
 
-### Compiles and minifies for production
-```
-yarn build
-```
+完成一个记事本工具，记录完成任务与总任务，如图：
 
-### Lints and fixes files
-```
-yarn lint
-```
+![image-20220301152550746](D:\#projectTest\vue-test\assets\notepad-demo.png)
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+#### 需求点
+
+1. input输入任务，回车表单创建任务
+   1. 输入空格，不会创建任务
+   2. 不可输入同名任务，输入同名任务有警告
+   3. 每次创建完成后清空input, 输入错误时，不清空
+2. 单条任务
+   1. 单条任务可删除，删除有删除提醒
+   2. 单条任务可勾选，标记为已完成
+3. 底部有总任务与单条任务个数统计
+4. 任务可全选，全选按钮与任务list联动
+5. 可进行完成任务清空操作
