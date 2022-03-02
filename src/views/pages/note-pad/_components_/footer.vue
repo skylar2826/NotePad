@@ -1,10 +1,10 @@
 <template>
-  <div class="footer">
+  <div class="footer" v-show="totalTaskNum">
     <div>
       <input type="checkbox" v-model="selectAll" />
       <span
-        >&nbsp;&nbsp;完成情况：{{ doneTasks }} /
-        {{ totalTask }}</span
+        >&nbsp;&nbsp;完成情况：{{ doneTasksNum }} /
+        {{ totalTaskNum }}</span
       >
     </div>
     <button @click="clearTaskDoneList">清空完成任务</button>
@@ -16,10 +16,10 @@ export default {
   name: "Footer",
   inject: ['selectAllTask', 'getTaskTotal', 'getDoneTaskTotal', 'clearTaskDoneList'],
   computed: {
-    totalTask() {
+    totalTaskNum() {
       return this.getTaskTotal()
     },
-    doneTasks() {
+    doneTasksNum() {
       return this.getDoneTaskTotal();
     },
     selectAll: {
@@ -27,7 +27,7 @@ export default {
         this.selectAllTask(isSelected);
       },
       get() {
-        return this.totalTask && this.doneTasks === this.totalTask;
+        return this.totalTaskNum.length && this.doneTasksNum === this.totalTaskNum;
       }
     }
   },
