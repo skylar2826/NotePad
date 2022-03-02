@@ -9,9 +9,6 @@ class TaskList {
   isExistTask(name) {
     return this.taskList.map(task => task.name).includes(name);
   }
-  isSelectedAll() {
-    return this.taskList.length && !this.taskList.map(task => task.done).includes(false);
-  }
   getTaskList() {
     return this.taskList;
   }

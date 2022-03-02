@@ -25,7 +25,6 @@ export default {
       addTask: this.addTask,
       deleteTask: this.deleteTask,
       selectAllTask: this.selectAllTask,
-      isSelectedAll: this.isSelectedAll,
       getTaskTotal: this.getTaskTotal,
       getDoneTaskTotal: this.getDoneTaskTotal,
       clearTaskDoneList: this.clearTaskDoneList,
@@ -40,9 +39,6 @@ export default {
   methods: {
     isExistTask(taskName) {
       return this.taskListInstance.isExistTask(taskName);
-    },
-    isSelectedAll() {
-      return this.taskListInstance.isSelectedAll();
     },
     addTask(taskName) {
       this.taskListInstance.addTask(taskName);
