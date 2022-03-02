@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import NotePad from './components/note-pad';
+import NotePad from './views/pages/note-pad';
 
 export default {
   name: 'App',
