@@ -28,6 +28,18 @@ class TaskList {
       this.taskList.unshift(task);
     }
   }
+  editTask(id, name) {
+    this.taskList = this.taskList.map(task => {
+      if (task.id === id) {
+        return {
+          ...task,
+          name
+        }
+      }
+      return task;
+    });
+    return this.taskList;
+  }
   deleteTask(id) {
     const idx = this.taskList.map(task => task.id).indexOf(id);
     if (idx > -1) {
