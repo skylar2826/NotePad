@@ -2,20 +2,30 @@
     <li class="task">
       <div class="task-show">
         <input type="checkbox" v-model="task.done" />
-        {{ task.name }}
+        <input class="noBorder" v-model="taskName" />
       </div>
-      <div class="error task-delete" @click="deleteTaskItem(task)">删除</div>
+      <div class="error operation" @click="deleteTaskItem(task)">删除</div>
     </li>
 </template>
 
 <script>
 export default {
   name: 'TaskItem',
-  inject: ['deleteTask'],
+  inject: ['deleteTask', 'editTask'],
   props: {
     task: {
       type: Object,
       require: true
+    }
+  },
+  computed: {
+    taskName: {
+      set(newName) {
+        this.editTask(this.task.id, newName);
+      },
+      get() {
+        return this.task.name;
+      }
     }
   },
   methods: {
@@ -23,7 +33,7 @@ export default {
       if (confirm(`确认删除任务：${task.name}?`)) {
         this.deleteTask(task.id);
       }
-    }
+    },
   }
 }
 </script>
@@ -33,12 +43,16 @@ export default {
     display: flex;
     width: 100%;
 
-    .task-show {
-      min-width: 200px;
+    .operation {
+      cursor: pointer;
     }
 
-    .task-delete {
-      cursor: pointer;
+    .noBorder {
+      border: none;
+    }
+
+    .task-show {
+      min-width: 200px;
     }
   }
 </style>

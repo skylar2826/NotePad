@@ -27,7 +27,7 @@ export default {
         this.selectAllTask(isSelected);
       },
       get() {
-        return this.totalTaskNum.length && this.doneTasksNum === this.totalTaskNum;
+        return this.totalTaskNum && this.doneTasksNum === this.totalTaskNum;
       }
     }
   },

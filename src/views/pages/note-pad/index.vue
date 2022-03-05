@@ -28,6 +28,7 @@ export default {
       getTaskTotal: this.getTaskTotal,
       getDoneTaskTotal: this.getDoneTaskTotal,
       clearTaskDoneList: this.clearTaskDoneList,
+      editTask: this.editTask,
     };
   },
   data() {
@@ -58,6 +59,9 @@ export default {
     getTaskTotal() {
       return this.taskListInstance.getTaskTotal();
     },
+    editTask(id, name) {
+      this.taskList = this.taskListInstance.editTask(id, name);
+    }
   },
   created() {
     this.taskListInstance = new TaskListClass();
@@ -72,6 +76,10 @@ export default {
 
   .error {
     color: red;
+  }
+
+  .info {
+    color: blue;
   }
 }
 </style>
