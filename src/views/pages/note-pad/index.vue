@@ -51,7 +51,8 @@ export default {
       this.taskListInstance.selectAllTask(isSelected);
     },
     clearTaskDoneList() {
-      this.taskList = this.taskListInstance.clearTaskDoneList();
+      this.taskListInstance.clearTaskDoneList();
+      this.getTaskList();
     },
     getDoneTaskTotal() {
       return this.taskListInstance.getDoneTaskTotal();
@@ -59,13 +60,17 @@ export default {
     getTaskTotal() {
       return this.taskListInstance.getTaskTotal();
     },
+    getTaskList() {
+      this.taskList = this.taskListInstance.getTaskList();
+    },
     editTask(id, name) {
-      this.taskList = this.taskListInstance.editTask(id, name);
+      this.taskListInstance.editTask(id, name);
+      this.getTaskList();
     }
   },
   created() {
     this.taskListInstance = new TaskListClass();
-    this.taskList = this.taskListInstance.getTaskList();
+    this.getTaskList();
   },
 };
 </script>
