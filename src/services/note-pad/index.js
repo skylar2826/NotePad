@@ -38,7 +38,6 @@ class TaskList {
       }
       return task;
     });
-    return this.taskList;
   }
   deleteTask(id) {
     const idx = this.taskList.map(task => task.id).indexOf(id);
@@ -51,7 +50,6 @@ class TaskList {
   }
   clearTaskDoneList() {
     this.taskList = this.taskList.filter(task => !task.done);
-    return this.taskList;
   }
 }
 
