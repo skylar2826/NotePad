@@ -7,9 +7,9 @@
 </template>
 
 <script>
-import Header from "./_components_/header";
-import TaskList from "./_components_/task-list.vue";
-import Footer from "./_components_/footer.vue";
+import Header from "../../components/header";
+import TaskList from "../../components/task-list.vue";
+import Footer from "../../components/footer.vue";
 import { TaskList as TaskListClass } from "../../../services/note-pad";
 
 export default {

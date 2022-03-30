@@ -47,7 +47,7 @@ export default {
     editedTaskItem(task, e) {
       task.isEdit = false;
       if (e.target.value.trim()) return;
-      this.editTask(id, e.target.value);
+      this.editTask(task.id, e.target.value);
     }
   }
 }
