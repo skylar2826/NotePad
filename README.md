@@ -4,12 +4,6 @@
 
 ### 需求
 
-完成一个记事本工具，记录完成任务与总任务，如图：
-
-
-
-![image-20220301152550746](D:\#projectTest\vue-test\assets\notepad-demo.png)
-
 #### 需求点
 
 1. input输入任务，回车表单创建任务
@@ -44,3 +38,7 @@
 
 1. 单测
 2. ts 维护数据
+
+### 功能演示
+
+见public/demo.mp4
